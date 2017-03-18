@@ -1,0 +1,5 @@
+Most usefull shell commands:
+1) gedit: create and edit a plain-text document
+2) ls: list the files in the current directory
+3) cd: move to the designated directory
+4) mkdir: make a new folder in the current directory.
