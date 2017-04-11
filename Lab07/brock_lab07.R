@@ -4,7 +4,6 @@
 
 # Problem #1 Fibonacci sequence
 fibonacci <- function(n = 3, k = 1){
-  # Preallocate vect and set the first 2 terms
   # Check to see if the values are integers and positive
   if(n < 0 || k < 0){
     return('Input values must be positive')
@@ -13,7 +12,11 @@ fibonacci <- function(n = 3, k = 1){
   if(abs(n - round(n)) > 0.0005 || abs(k - round(k)) > 0.0005){
     return('Input values must be integers')
   } 
+  # Check to see if k is 0 or 1
+  if(k == 1 || k == 0){
+  # Preallocate vect and set the first 2 terms
   vect <- rep(k, n)
+  vect[2] <- 1
   # if statements check if the vector should be output short of the for loop
   if(n < 2){
     return(vect)
@@ -28,6 +31,10 @@ fibonacci <- function(n = 3, k = 1){
     vect[i] <- vect[i - 2] + vect[i -1]
   }
   return(vect)
+  }
+  }
+  else{
+    return('Value of k must be 0 or 1')
   }
 }
 
@@ -58,7 +65,7 @@ adjmatrix_to_pairwise <- function(table){
       if(table[i,j] > 0){
         pairtable[counter, 1] <- i
         pairtable[counter, 2] <- j
-        pairtable[counter, 3] <- data[i,j]
+        pairtable[counter, 3] <- table[i,j]
         counter <- counter + 1
       }
     }
